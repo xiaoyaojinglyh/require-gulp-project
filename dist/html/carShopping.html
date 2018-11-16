@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/css/carShopping.css">
+</head>
+<body>
+	<header></header>
+	<div class="car_box">
+		<h2>购物车</h2>
+		<div class="car_content">
+			<table class="car_thead">
+				<thead>
+					<tr class="car_list">
+						<td style="width: 18px;height: 44px;line-height: 44px;text-align: center;">
+							<input type="checkbox" class="all-check">
+						</td>
+						<td style="width:172px;">商品</td>
+						<td style="width:193px;"></td>
+						<td style="width:210px;">生日牌/数字蜡烛</td>
+						<td style="width:152px;">单价</td>
+						<td style="width:135px;">数量</td>
+						<td style="width:125px;">金额</td>
+						<td style="width:168px;">操作</td>
+					</tr>
+				</thead>
+				<tbody class="tbody"></tbody>
+				<script type="text/html" id="html-product">
+					{{each products item i}}
+					<tr class="car_products">
+						<td style="width: 18px;">
+							<input type="checkbox" class="single-check">
+						</td>
+						<td style="width:172px;">
+						<img src="{{item.img}}" >
+						</td>
+						<td style="width:193px;">
+							<span>{{item.title}}</span>
+							<span> 尺寸：{{item.size}}</span>
+							<span>含餐具5套</span> 
+						</td>
+						<td style="width:210px;">
+						<div class="mock_select">
+							编辑或选择
+						</div>
+						</td>
+						<td style="width:152px;">￥{{item.price}}</td>
+						<td style="width:135px;">
+						<button class="btn"> - </button>
+						<input class="sumInput" readonly type="text" value="{{item.num}}">
+						<button class="btn1">+</button>
+						</td>
+						<td class="td-price" style="width:125px;">￥{{item.price*item.num}}</td>
+						<td style="width:168px;"><a href="javascript:;" class="delBtn">X</a>
+						</td>
+						<span style="display: none;" class="pro-id">{{item.id}}</span>
+						</tr>
+						{{/each}}
+					</script>
+				
+			</table>
+			
+		</div>
+		<div class="bottom-box">
+			<div class="left-list">
+				<div class="left-top">
+					<p>配件商品</p>
+					<p>配单商品</p>
+				</div>
+			<ul>
+				<li>
+					<img src="/images/detail/pic1.jpg" alt="">
+					<p class="p1">Cutlies</p>
+					<p class="p2">餐具(5份装)</p>
+					<p class="p3">￥5.00</p>
+					<a href="javascript:;">购买</a>
+				</li>
+				<li>
+					<img src="/images/detail/pic2.jpg" alt="">
+					<p class="p1">Cankdle</p>
+					<p class="p2">数字蜡烛(下单请备注数字)</p>
+					<p class="p3">￥5.00</p>
+					<a href="javascript:;">购买</a>
+				</li>
+			</ul>
+			</div>
+		</div>
+		
+		<div class="right-box">
+			<div class="productPrice">
+				<p class="Price">商品金额：￥318</p>
+				<p class="okPrice">优惠金额:￥0</p>
+			</div>
+			<p class="addPrice">
+				(订单可得积分318)合计:￥318
+			</p>
+			<p class="addPrice1">
+				活动：先领取￥320优惠券再下单
+			</p>
+			<button class="priceBtn">结算</button>
+		</div>
+	</div>
+	<footer></footer>
+	<script src="/libs/require/require.js" data-main="/js/carShopping.js"></script>
+</body>
+</html>
